@@ -29,7 +29,8 @@ public class Product {
     private String category;
     private BigDecimal price;
     private Integer stockQuantity;
-    private Boolean active;
+    @Builder.Default
+    private Boolean active=true;
     @CreationTimestamp
     private LocalDateTime createdAt;
     @UpdateTimestamp
