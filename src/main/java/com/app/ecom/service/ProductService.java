@@ -51,6 +51,7 @@ public class ProductService {
 
     private ProductResponse mapToProductResponse(Product product) {
         return ProductResponse.builder()
+                .id(product.getId())
                 .name(product.getName())
                 .category(product.getCategory())
                 .description(product.getDescription())
@@ -58,6 +59,8 @@ public class ProductService {
                 .imageUrl(product.getImageUrl())
                 .active(product.getActive())
                 .price(product.getPrice())
+                .createdAt(product.getCreatedAt())
+                .updatedAt(product.getUpdatedAt())
                 .build();
     }
 
