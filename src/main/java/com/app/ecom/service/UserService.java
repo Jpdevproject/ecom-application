@@ -57,10 +57,10 @@ public class UserService {
     }
 
     public boolean updateUserById(Long id, UserRequest updatedUser) {
-        User updated=mapToUserEntity(updatedUser);
         return userRepository.findById(id)
                 .map(existing->{
-                    updated.setId(id);
+                    User updated=mapToUserEntity(updatedUser);
+                    updated.setId(existing.getId());
                     userRepository.save(updated);
                     return true;
                 }).orElse(false);
